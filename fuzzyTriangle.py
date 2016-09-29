@@ -16,19 +16,12 @@ class FuzzyTriangle():
     def calcul_droite(self, point1, point2):
         xa, ya = point1
         xb, yb = point2
-        if (DEBUG): print "point1({},{}) - point2({},{})".format(xa, ya, xb, yb)
 
-        temp = (xb - xa)
-        a = 0
-        if (temp == 0):
-            a = 0
-        else:
-            (yb - ya) / temp
+        a = (yb - ya) / (xb - xa)
 
         if (DEBUG): print "a = ({}-{}) / ({}-{})".format(yb, ya, xb, xa)
 
-        b = ya / (a * xa)
-        if (DEBUG): print "b = {} / ({}*{})".format(ya, a, xa)
+        b = ya - (a * xa)
 
         return a, b
 
