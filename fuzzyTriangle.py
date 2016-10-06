@@ -1,12 +1,12 @@
 import droite as d
 
-DEBUG = True
+DEBUG = False
 
 """UNE CLASSE POUR OBTENIR UNE VAL D'APPARTENANCE A UN ENSEMBLE FLOU REPRESENTER PAR UN TRIANGLE """
 
 
 class FuzzyTriangle():
-    """le triangle se compose de deuc segement avec un 0<=y<=1 """
+    """le triangle se compose de deux segement avec un 0<=y<=1 """
 
     def __init__(self, limite1, limite2):
         self.l1 = limite1
