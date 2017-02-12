@@ -3,6 +3,7 @@ import csv
 
 import pendule as pd
 from rule import Rule
+
 """
     Principe de l'evaluation :
         - en binome
@@ -10,7 +11,7 @@ from rule import Rule
         - ENTRES : - angle de la tige par rapport verticale
                    - vitesse angulaire (calculé)
 """
-
+DEBUG = False
 
 
 def create_csv(name,x):
@@ -33,6 +34,7 @@ def read_csv(name):
         # pour chaque donne on cherche a quel groupe il appartient avec get_fuzzygroup :
         list_angle.append(float(row[0]))
         list_speed.append(float(row[1]))
+        if DEBUG: print row
     return list_angle, list_speed
 
 def main():

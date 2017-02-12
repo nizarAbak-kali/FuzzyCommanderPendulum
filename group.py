@@ -1,5 +1,7 @@
 from fuzzyTriangle import FuzzyTriangle
 
+DEBUG = False
+
 """
 CLASS REPRESENTING LES GROUPES
 """
@@ -12,6 +14,11 @@ class group:
         self.limite_gauche = lg
         self.limite_droite = ld
         self.triangle = FuzzyTriangle(self.limite_gauche, self.limite_droite)
+        if DEBUG:
+            print "init :"
+            print str(self.name)
+            print str(self.code)
+            print str(self.limite_gauche) + " , " + str(self.limite_droite)
 
     def limits(self):
         return self.limite_gauche, self.limite_droite
@@ -31,4 +38,5 @@ class group:
     """degre d'appartenace au groupe"""
 
     def appartenance(self, x):
+        if DEBUG: print "group appartenance x = " + str(x)
         return self.triangle.get_appartenance(x)
